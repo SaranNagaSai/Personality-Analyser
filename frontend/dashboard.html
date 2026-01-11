@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Personality Analysis | Personality Analyser</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="page-wrapper dashboard-wrapper">
+
+  <!-- Brand Header -->
+  <div class="brand-header">
+    <div class="logo">🧠</div>
+    <h1>Personality Analyser</h1>
+    <p>Your Personality Insights</p>
+  </div>
+
+  <!-- Dashboard Card -->
+  <div class="dashboard-card">
+
+    <h3 class="section-title">Your Personality Analysis</h3>
+
+    <!-- Chart -->
+    <div class="chart-container">
+      <canvas id="chart"></canvas>
+    </div>
+
+    <!-- Summary -->
+    <div class="summary-text" id="summaryText">
+      Based on your responses, here is an overview of your personality traits.
+    </div>
+
+    <!-- Similar users -->
+    <div class="summary-text" id="similar">
+      Calculating similar personality profiles...
+    </div>
+
+    <!-- Improvement Links -->
+    <div class="improvement-box">
+      <h4 class="section-title">Ways to Improve</h4>
+      <ul id="suggestions"></ul>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>
