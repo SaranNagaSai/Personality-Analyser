@@ -1,99 +1,61 @@
-// Get stored data
+const BASE_URL = "https://personality-analyser.onrender.com";
+
 const scores = JSON.parse(localStorage.getItem("scores"));
 const name = localStorage.getItem("userName");
+const personality = localStorage.getItem("personality");
 
-// Safety check
 if (!scores || !name) {
   window.location.href = "index.html";
 }
 
-// Summary text
 document.getElementById("summaryText").innerText =
-  `Hi ${name}, based on your responses, this analysis highlights your personality traits across social behavior, emotional stability, confidence, planning, and focus.`;
+  `Hi ${name}, this analysis reflects your social skills, emotional balance, confidence, planning ability, and focus.`;
 
-// Similar users count (from backend)
-fetch(`http://localhost:5000/api/test/similar/${localStorage.getItem("personality")}`)
+// Fetch similar personality count
+fetch(`${BASE_URL}/api/test/similar/${personality}`)
   .then(res => res.json())
   .then(data => {
     document.getElementById("similar").innerText =
-      `${data.count} people have a personality profile similar to yours.`;
+      `${data.count} people share a similar personality profile.`;
   })
   .catch(() => {
     document.getElementById("similar").innerText =
-      "Unable to calculate similar profiles at the moment.";
+      "Could not load similarity data.";
   });
 
-// Improvement links based on weak traits
-const improvementLinks = {
-  social: {
-    text: "Improve Social Communication Skills",
-    url: "https://www.mindtools.com/communication-skills"
-  },
-  emotional: {
-    text: "Learn Stress & Emotion Management",
-    url: "https://www.helpguide.org/articles/stress/stress-management.htm"
-  },
-  planning: {
-    text: "Develop Better Planning & Time Management",
-    url: "https://www.atlassian.com/time-management"
-  },
-  confidence: {
-    text: "Build Self-Confidence",
-    url: "https://www.verywellmind.com/build-self-confidence-4163098"
-  },
-  focus: {
-    text: "Improve Focus & Concentration",
-    url: "https://www.healthline.com/health/how-to-focus"
-  }
+// Improvement resources
+const resources = {
+  social: ["Improve Social Skills", "https://www.mindtools.com/communication-skills"],
+  emotional: ["Manage Stress Better", "https://www.helpguide.org/articles/stress/stress-management.htm"],
+  planning: ["Improve Planning Skills", "https://www.atlassian.com/time-management"],
+  confidence: ["Build Self-Confidence", "https://www.verywellmind.com/build-self-confidence-4163098"],
+  focus: ["Increase Focus", "https://www.healthline.com/health/how-to-focus"]
 };
 
-const suggestionsList = document.getElementById("suggestions");
-suggestionsList.innerHTML = "";
+const list = document.getElementById("suggestions");
+list.innerHTML = "";
 
-// Identify weak areas (threshold < 2)
 Object.keys(scores).forEach(trait => {
   if (scores[trait] < 2) {
     const li = document.createElement("li");
-    li.innerHTML = `
-      <a href="${improvementLinks[trait].url}" target="_blank">
-        ${improvementLinks[trait].text}
-      </a>
-    `;
-    suggestionsList.appendChild(li);
+    li.innerHTML = `<a href="${resources[trait][1]}" target="_blank">${resources[trait][0]}</a>`;
+    list.appendChild(li);
   }
 });
 
-// Chart rendering
-const ctx = document.getElementById("chart");
-
-new Chart(ctx, {
+// Chart
+new Chart(document.getElementById("chart"), {
   type: "bar",
   data: {
     labels: ["Social", "Emotional", "Planning", "Confidence", "Focus"],
     datasets: [{
-      label: "Personality Score",
-      data: [
-        scores.social,
-        scores.emotional,
-        scores.planning,
-        scores.confidence,
-        scores.focus
-      ],
+      data: Object.values(scores),
       borderWidth: 1
     }]
   },
   options: {
-    responsive: true,
-    plugins: {
-      legend: {
-        display: false
-      }
-    },
     scales: {
-      y: {
-        beginAtZero: true,
-        max: 10
-      }
+      y: { beginAtZero: true, max: 10 }
     }
   }
 });
