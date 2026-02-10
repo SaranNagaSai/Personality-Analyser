@@ -12,17 +12,12 @@ if (!scores || !name) {
 document.getElementById("summaryText").innerText =
   `Hi ${name}, based on your responses, this analysis highlights your personality traits across social behavior, emotional stability, confidence, planning, and focus.`;
 
-// Similar users count (from backend)
-fetch(`http://localhost:5000/api/test/similar/${personality}`)
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById("similar").innerText =
-      `${data.count} people have a personality profile similar to yours.`;
-  })
-  .catch(() => {
-    document.getElementById("similar").innerText =
-      "Unable to calculate similar profiles at the moment.";
-  });
+
+// Similar users count (static version - no backend needed)
+// In a static app, we can show a motivational message instead
+document.getElementById("similar").innerText =
+  `You're unique! Your personality profile has been saved to your device.`;
+
 
 // Personality-based resources
 const personalityResources = {

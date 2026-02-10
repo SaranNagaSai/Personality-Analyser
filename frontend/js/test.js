@@ -7,19 +7,15 @@ function finishTest() {
     focus: Number(q9.value) + Number(q10.value)
   };
 
-  const userName = localStorage.getItem("userName");
-  const userId = localStorage.getItem("userId");
+  // Determine personality type (static version - no backend)
+  const personality = scores.social > 2 ? "Extrovert Thinker" : "Calm Analyzer";
 
-  fetch("http://localhost:5000/api/test/submit", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ scores, userName, userId })
-  })
-    .then(res => res.json())
-    .then(data => {
-      localStorage.setItem("scores", JSON.stringify(scores));
-      localStorage.setItem("personality", data.personality);
-      window.location.href = "dashboard.html";
-    });
+  // Save to localStorage
+  localStorage.setItem("scores", JSON.stringify(scores));
+  localStorage.setItem("personality", personality);
+
+  // Redirect to dashboard
+  window.location.href = "dashboard.html";
 }
+
 
