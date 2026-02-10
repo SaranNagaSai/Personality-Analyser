@@ -11,6 +11,8 @@ async function login() {
   const data = await res.json();
   if (res.ok) {
     localStorage.setItem("userName", data.name);
+    localStorage.setItem("userId", data.userId);
     window.location.href = "test.html";
   } else alert(data.msg);
 }
+
