@@ -19,9 +19,17 @@ body {
 
 /* Animated background gradient */
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Floating particles effect */
@@ -30,7 +38,7 @@ body::before {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
@@ -49,11 +57,98 @@ body::before {
   animation: fadeInUp 0.6s ease-out;
 }
 
+.home-wrapper {
+  max-width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.hero-section {
+  text-align: center;
+  max-width: 800px;
+  padding: 60px 40px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+  transform: translateY(-20px);
+}
+
+.logo-large {
+  font-size: 80px;
+  margin-bottom: 20px;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.main-title {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 10px 0;
+  letter-spacing: -1px;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 40px;
+  font-weight: 300;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 20px 60px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #667eea;
+  background: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  color: #764ba2;
+}
+
+/* Helper Class for hiding elements if needed */
+.hidden {
+  display: none !important;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -76,8 +171,13 @@ body::before {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .logo {
@@ -93,7 +193,7 @@ body::before {
   justify-content: center;
   font-size: 42px;
   color: #fff;
-  box-shadow: 
+  box-shadow:
     0 15px 35px rgba(102, 126, 234, 0.4),
     0 5px 15px rgba(0, 0, 0, 0.2),
     inset 0 0 20px rgba(255, 255, 255, 0.2);
@@ -101,14 +201,17 @@ body::before {
 }
 
 @keyframes logoGlow {
-  0%, 100% {
-    box-shadow: 
+
+  0%,
+  100% {
+    box-shadow:
       0 15px 35px rgba(102, 126, 234, 0.4),
       0 5px 15px rgba(0, 0, 0, 0.2),
       inset 0 0 20px rgba(255, 255, 255, 0.2);
   }
+
   50% {
-    box-shadow: 
+    box-shadow:
       0 20px 45px rgba(240, 147, 251, 0.6),
       0 8px 20px rgba(118, 75, 162, 0.4),
       inset 0 0 30px rgba(255, 255, 255, 0.3);
@@ -116,8 +219,13 @@ body::before {
 }
 
 @keyframes logoRotate {
-  from { background-position: 0% 50%; }
-  to { background-position: 200% 50%; }
+  from {
+    background-position: 0% 50%;
+  }
+
+  to {
+    background-position: 200% 50%;
+  }
 }
 
 .brand-header h1 {
@@ -125,7 +233,7 @@ body::before {
   font-size: 32px;
   color: #fff;
   font-weight: 700;
-  text-shadow: 
+  text-shadow:
     0 2px 10px rgba(0, 0, 0, 0.3),
     0 0 20px rgba(255, 255, 255, 0.2);
   letter-spacing: 0.5px;
@@ -146,7 +254,7 @@ body::before {
   backdrop-filter: blur(10px);
   border-radius: 25px;
   padding: 40px;
-  box-shadow: 
+  box-shadow:
     0 30px 60px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(255, 255, 255, 0.5) inset;
   margin: auto;
@@ -157,7 +265,7 @@ body::before {
 .card:hover,
 .dashboard-card:hover {
   transform: translateY(-5px);
-  box-shadow: 
+  box-shadow:
     0 40px 80px rgba(0, 0, 0, 0.35),
     0 0 0 1px rgba(255, 255, 255, 0.6) inset;
 }
@@ -195,7 +303,7 @@ input:focus,
 select:focus {
   outline: none;
   border-color: #667eea;
-  box-shadow: 
+  box-shadow:
     0 0 0 4px rgba(102, 126, 234, 0.1),
     0 5px 15px rgba(102, 126, 234, 0.2);
   transform: translateY(-2px);
@@ -213,7 +321,7 @@ button {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
   background-size: 200% 200%;
   color: #fff;
-  box-shadow: 
+  box-shadow:
     0 10px 25px rgba(102, 126, 234, 0.4),
     0 5px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -236,7 +344,7 @@ button::before {
 
 button:hover {
   transform: translateY(-3px);
-  box-shadow: 
+  box-shadow:
     0 15px 35px rgba(102, 126, 234, 0.5),
     0 8px 15px rgba(0, 0, 0, 0.2);
   background-position: 100% 0;
@@ -325,7 +433,7 @@ button:active {
   padding: 25px;
   background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(240, 147, 251, 0.05));
   border-radius: 20px;
-  box-shadow: 
+  box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.1),
     inset 0 0 0 1px rgba(255, 255, 255, 0.5);
 }
@@ -443,6 +551,7 @@ button:active {
 }
 
 @media (max-width: 480px) {
+
   .card,
   .dashboard-card {
     padding: 25px 20px;
@@ -459,3 +568,20 @@ button:active {
   }
 }
 
+
+/* ================= NAVIGATION ================= */
+.back-link {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.back-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}

@@ -1,11 +1,11 @@
 // Get stored data
 const scores = JSON.parse(localStorage.getItem("scores"));
-const name = localStorage.getItem("userName");
+const name = localStorage.getItem("userName") || "Friend"; // Default to "Friend" if no name
 const personality = localStorage.getItem("personality");
 
-// Safety check
-if (!scores || !name) {
-  window.location.href = "index.html";
+// Safety check - only redirect if scores are missing (user hasn't taken test)
+if (!scores) {
+  window.location.href = "test.html";
 }
 
 // Summary text
@@ -25,24 +25,24 @@ const personalityResources = {
     description: "As an Extrovert Thinker, you thrive in social settings and enjoy analytical challenges. Here are resources tailored for you:",
     links: [
       {
-        text: "Leadership Skills for Extroverts",
-        url: "https://www.forbes.com/leadership/"
+        text: "HBR: How to Manage Your Network",
+        url: "https://hbr.org/topic/networking"
       },
       {
-        text: "Networking Strategies for Success",
-        url: "https://www.linkedin.com/business/talent/blog/networking"
+        text: "Ted Talk: The Power of Vulnerability",
+        url: "https://www.ted.com/talks/brene_brown_the_power_of_vulnerability"
       },
       {
-        text: "Critical Thinking and Problem Solving",
-        url: "https://www.coursera.org/courses?query=critical%20thinking"
+        text: "Coursera: Strategic Leadership and Management",
+        url: "https://www.coursera.org/specializations/strategic-leadership"
       },
       {
-        text: "Public Speaking Mastery",
-        url: "https://www.ted.com/playlists/226/before_public_speaking"
+        text: "Psychology Today: Extroverts and Happiness",
+        url: "https://www.psychologytoday.com/us/basics/extroversion"
       },
       {
-        text: "Team Collaboration Best Practices",
-        url: "https://www.atlassian.com/team-playbook"
+        text: "MasterClass: Daniel Pink on Sales and Persuasion",
+        url: "https://www.masterclass.com/classes/daniel-pink-teaches-sales-and-persuasion"
       }
     ]
   },
@@ -50,24 +50,24 @@ const personalityResources = {
     description: "As a Calm Analyzer, you excel at deep thinking and careful analysis. Here are resources to enhance your strengths:",
     links: [
       {
-        text: "Deep Work and Focus Techniques",
+        text: "Quiet: The Power of Introverts (Susan Cain)",
+        url: "https://www.quietrev.com/"
+      },
+      {
+        text: "Cal Newport: Deep Work Book",
         url: "https://www.calnewport.com/books/deep-work/"
       },
       {
-        text: "Mindfulness and Meditation Practices",
-        url: "https://www.headspace.com/meditation/meditation-for-beginners"
+        text: "Headspace: Meditation for Focus",
+        url: "https://www.headspace.com/meditation/focus"
       },
       {
-        text: "Strategic Planning and Analysis",
-        url: "https://www.mindtools.com/strategic-planning"
+        text: "Coursera: Data Analysis and Visualization",
+        url: "https://www.coursera.org/specializations/data-analysis"
       },
       {
-        text: "Introvert Strengths in the Workplace",
-        url: "https://www.quietrev.com/quiet-leadership-institute/"
-      },
-      {
-        text: "Research and Analytical Skills",
-        url: "https://www.coursera.org/courses?query=data%20analysis"
+        text: "Verywell Mind: Benefits of Solitude",
+        url: "https://www.verywellmind.com/the-benefits-of-being-alone-4769939"
       }
     ]
   }
@@ -96,24 +96,24 @@ if (personalityResources[personality]) {
 // Improvement links based on weak traits
 const improvementLinks = {
   social: {
-    text: "Improve Social Communication Skills",
-    url: "https://www.mindtools.com/communication-skills"
+    text: "SkillsYouNeed: Communication Skills",
+    url: "https://www.skillsyouneed.com/ips/communication-skills.html"
   },
   emotional: {
     text: "Learn Stress & Emotion Management",
     url: "https://www.helpguide.org/articles/stress/stress-management.htm"
   },
   planning: {
-    text: "Develop Better Planning & Time Management",
-    url: "https://www.atlassian.com/time-management"
+    text: "Atlassian: How to Manage Time Better",
+    url: "https://www.atlassian.com/blog/productivity/how-to-manage-time-better"
   },
   confidence: {
     text: "Build Self-Confidence",
     url: "https://www.verywellmind.com/build-self-confidence-4163098"
   },
   focus: {
-    text: "Improve Focus & Concentration",
-    url: "https://www.healthline.com/health/how-to-focus"
+    text: "Healthline: How to Stay Focused",
+    url: "https://www.healthline.com/health/mental-health/how-to-stay-focused"
   }
 };
 

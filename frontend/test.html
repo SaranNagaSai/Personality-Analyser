@@ -1,142 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Personality Test | Personality Analyser</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<div class="page-wrapper test-card">
+  <div class="page-wrapper test-card">
 
-  <!-- Brand Header -->
-  <div class="brand-header">
-    <div class="logo">🧠</div>
-    <h1>Personality Analyser</h1>
-    <p>Please answer honestly</p>
+    <!-- Brand Header -->
+    <div class="brand-header">
+      <a href="index.html" class="back-link">← Back to Home</a>
+      <div class="logo">🧠</div>
+      <h1>Personality Analyser</h1>
+      <p>Please answer honestly</p>
+    </div>
+
+    <!-- Test Card -->
+    <div class="card">
+      <h3>Personality Assessment</h3>
+
+      <!-- Question 1 -->
+      <div class="question">
+        <p>I feel comfortable starting a conversation with someone I have never met before.</p>
+        <select id="q1">
+          <option value="2">Strongly Agree</option>
+          <option value="1">Agree</option>
+          <option value="0">Neutral</option>
+          <option value="-1">Disagree</option>
+        </select>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question">
+        <p>I enjoy working with others rather than working alone most of the time.</p>
+        <select id="q2">
+          <option value="2">Strongly Agree</option>
+          <option value="1">Agree</option>
+          <option value="0">Neutral</option>
+          <option value="-1">Disagree</option>
+        </select>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question">
+        <p>I am able to stay calm and think clearly when I face stressful situations.</p>
+        <select id="q3">
+          <option value="2">Strongly Agree</option>
+          <option value="1">Agree</option>
+          <option value="0">Neutral</option>
+          <option value="-1">Disagree</option>
+        </select>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question">
+        <p>I recover quickly after experiencing disappointment or failure.</p>
+        <select id="q4">
+          <option value="2">Strongly Agree</option>
+          <option value="1">Agree</option>
+          <option value="0">Neutral</option>
+          <option value="-1">Disagree</option>
+        </select>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="question">
+        <p>Before making important decisions, I prefer to plan and think through all possible outcomes.</p>
+        <select id="q5">
+          <option value="2">Strongly Agree</option>
+          <option value="1">Agree</option>
+          <option value="0">Neutral</option>
+          <option value="-1">Disagree</option>
+        </select>
+      </div>
+
+      <!-- Question 6 -->
+      <div class="question">
+        <p>I usually complete my tasks on time without needing reminders from others.</p>
+        <select id="q6">
+          <option value="2">Strongly Agree</option>
+          <option value="1">Agree</option>
+          <option value="0">Neutral</option>
+          <option value="-1">Disagree</option>
+        </select>
+      </div>
+
+      <!-- Question 7 -->
+      <div class="question">
+        <p>I believe in my abilities even when others doubt me.</p>
+        <select id="q7">
+          <option value="2">Strongly Agree</option>
+          <option value="1">Agree</option>
+          <option value="0">Neutral</option>
+          <option value="-1">Disagree</option>
+        </select>
+      </div>
+
+      <!-- Question 8 -->
+      <div class="question">
+        <p>I am comfortable expressing my opinions even if they differ from others.</p>
+        <select id="q8">
+          <option value="2">Strongly Agree</option>
+          <option value="1">Agree</option>
+          <option value="0">Neutral</option>
+          <option value="-1">Disagree</option>
+        </select>
+      </div>
+
+      <!-- Question 9 -->
+      <div class="question">
+        <p>I am able to concentrate on a task without getting distracted easily.</p>
+        <select id="q9">
+          <option value="2">Strongly Agree</option>
+          <option value="1">Agree</option>
+          <option value="0">Neutral</option>
+          <option value="-1">Disagree</option>
+        </select>
+      </div>
+
+      <!-- Question 10 -->
+      <div class="question">
+        <p>I can manage my time effectively between work, study, and personal life.</p>
+        <select id="q10">
+          <option value="2">Strongly Agree</option>
+          <option value="1">Agree</option>
+          <option value="0">Neutral</option>
+          <option value="-1">Disagree</option>
+        </select>
+      </div>
+
+      <!-- Submit Button -->
+      <button onclick="finishTest()">Finish Test</button>
+    </div>
+
   </div>
 
-  <!-- Test Card -->
-  <div class="card">
-    <h3>Personality Assessment</h3>
-
-    <!-- Question 1 -->
-    <div class="question">
-      <p>I feel comfortable starting a conversation with someone I have never met before.</p>
-      <select id="q1">
-        <option value="2">Strongly Agree</option>
-        <option value="1">Agree</option>
-        <option value="0">Neutral</option>
-        <option value="-1">Disagree</option>
-      </select>
-    </div>
-
-    <!-- Question 2 -->
-    <div class="question">
-      <p>I enjoy working with others rather than working alone most of the time.</p>
-      <select id="q2">
-        <option value="2">Strongly Agree</option>
-        <option value="1">Agree</option>
-        <option value="0">Neutral</option>
-        <option value="-1">Disagree</option>
-      </select>
-    </div>
-
-    <!-- Question 3 -->
-    <div class="question">
-      <p>I am able to stay calm and think clearly when I face stressful situations.</p>
-      <select id="q3">
-        <option value="2">Strongly Agree</option>
-        <option value="1">Agree</option>
-        <option value="0">Neutral</option>
-        <option value="-1">Disagree</option>
-      </select>
-    </div>
-
-    <!-- Question 4 -->
-    <div class="question">
-      <p>I recover quickly after experiencing disappointment or failure.</p>
-      <select id="q4">
-        <option value="2">Strongly Agree</option>
-        <option value="1">Agree</option>
-        <option value="0">Neutral</option>
-        <option value="-1">Disagree</option>
-      </select>
-    </div>
-
-    <!-- Question 5 -->
-    <div class="question">
-      <p>Before making important decisions, I prefer to plan and think through all possible outcomes.</p>
-      <select id="q5">
-        <option value="2">Strongly Agree</option>
-        <option value="1">Agree</option>
-        <option value="0">Neutral</option>
-        <option value="-1">Disagree</option>
-      </select>
-    </div>
-
-    <!-- Question 6 -->
-    <div class="question">
-      <p>I usually complete my tasks on time without needing reminders from others.</p>
-      <select id="q6">
-        <option value="2">Strongly Agree</option>
-        <option value="1">Agree</option>
-        <option value="0">Neutral</option>
-        <option value="-1">Disagree</option>
-      </select>
-    </div>
-
-    <!-- Question 7 -->
-    <div class="question">
-      <p>I believe in my abilities even when others doubt me.</p>
-      <select id="q7">
-        <option value="2">Strongly Agree</option>
-        <option value="1">Agree</option>
-        <option value="0">Neutral</option>
-        <option value="-1">Disagree</option>
-      </select>
-    </div>
-
-    <!-- Question 8 -->
-    <div class="question">
-      <p>I am comfortable expressing my opinions even if they differ from others.</p>
-      <select id="q8">
-        <option value="2">Strongly Agree</option>
-        <option value="1">Agree</option>
-        <option value="0">Neutral</option>
-        <option value="-1">Disagree</option>
-      </select>
-    </div>
-
-    <!-- Question 9 -->
-    <div class="question">
-      <p>I am able to concentrate on a task without getting distracted easily.</p>
-      <select id="q9">
-        <option value="2">Strongly Agree</option>
-        <option value="1">Agree</option>
-        <option value="0">Neutral</option>
-        <option value="-1">Disagree</option>
-      </select>
-    </div>
-
-    <!-- Question 10 -->
-    <div class="question">
-      <p>I can manage my time effectively between work, study, and personal life.</p>
-      <select id="q10">
-        <option value="2">Strongly Agree</option>
-        <option value="1">Agree</option>
-        <option value="0">Neutral</option>
-        <option value="-1">Disagree</option>
-      </select>
-    </div>
-
-    <!-- Submit Button -->
-    <button onclick="finishTest()">Finish Test</button>
-  </div>
-
-</div>
-
-<script src="js/test.js"></script>
+  <script src="js/test.js"></script>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Personality Analysis | Personality Analyser</title>
   <meta charset="UTF-8">
@@ -7,57 +8,61 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
 
-<div class="page-wrapper dashboard-wrapper">
+  <div class="page-wrapper dashboard-wrapper">
 
-  <!-- Brand Header -->
-  <div class="brand-header">
-    <div class="logo">🧠</div>
-    <h1>Personality Analyser</h1>
-    <p>Your Personality Insights</p>
-  </div>
-
-  <!-- Dashboard Card -->
-  <div class="dashboard-card">
-
-    <h3 class="section-title">Your Personality Analysis</h3>
-
-    <!-- Chart -->
-    <div class="chart-container">
-      <canvas id="chart"></canvas>
+    <!-- Brand Header -->
+    <div class="brand-header">
+      <a href="index.html" class="back-link">← Back to Home</a>
+      <div class="logo">🧠</div>
+      <h1>Personality Analyser</h1>
+      <p>Your Personality Insights</p>
     </div>
 
-    <!-- Summary -->
-    <div class="summary-text" id="summaryText">
-      Based on your responses, here is an overview of your personality traits.
-    </div>
+    <!-- Dashboard Card -->
+    <div class="dashboard-card">
 
-    <!-- Similar users -->
-    <div class="summary-text" id="similar">
-      Calculating similar personality profiles...
-    </div>
+      <h3 class="section-title">Your Personality Analysis</h3>
 
-    <!-- Personality Type Resources -->
-    <div class="improvement-box">
-      <h4 class="section-title">Resources for Your Personality Type</h4>
-      <div class="summary-text" id="personalityTypeInfo">
-        Loading personality-specific resources...
+      <!-- Chart -->
+      <div class="chart-container">
+        <canvas id="chart"></canvas>
       </div>
-      <ul id="personalityResources"></ul>
+
+      <!-- Summary -->
+      <div class="summary-text" id="summaryText">
+        Based on your responses, here is an overview of your personality traits.
+      </div>
+
+      <!-- Similar users -->
+      <div class="summary-text" id="similar">
+        Calculating similar personality profiles...
+      </div>
+
+      <!-- Personality Type Resources -->
+      <div class="improvement-box">
+        <h4 class="section-title">Resources for Your Personality Type</h4>
+        <div class="summary-text" id="personalityTypeInfo">
+          Loading personality-specific resources...
+        </div>
+        <ul id="personalityResources"></ul>
+      </div>
+
+      <!-- Improvement Links -->
+      <div class="improvement-box">
+        <h4 class="section-title">Ways to Improve</h4>
+        <ul id="suggestions"></ul>
+
+        <div style="margin-top: 30px; text-align: center;">
+          <a href="test.html" class="cta-button" style="font-size: 1rem; padding: 12px 30px;">Retake Test</a>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Improvement Links -->
-    <div class="improvement-box">
-      <h4 class="section-title">Ways to Improve</h4>
-      <ul id="suggestions"></ul>
-    </div>
-
-  </div>
-
-</div>
-
-<script src="js/dashboard.js"></script>
+    <script src="js/dashboard.js"></script>
 </body>
-</html>
 
+</html>

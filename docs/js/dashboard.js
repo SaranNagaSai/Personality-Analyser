@@ -25,11 +25,11 @@ fetch(`${BASE_URL}/api/test/similar/${personality}`)
 
 // Improvement resources
 const resources = {
-  social: ["Improve Social Skills", "https://www.mindtools.com/communication-skills"],
+  social: ["SkillsYouNeed: Communication Skills", "https://www.skillsyouneed.com/ips/communication-skills.html"],
   emotional: ["Manage Stress Better", "https://www.helpguide.org/articles/stress/stress-management.htm"],
-  planning: ["Improve Planning Skills", "https://www.atlassian.com/time-management"],
+  planning: ["Atlassian: How to Manage Time Better", "https://www.atlassian.com/blog/productivity/how-to-manage-time-better"],
   confidence: ["Build Self-Confidence", "https://www.verywellmind.com/build-self-confidence-4163098"],
-  focus: ["Increase Focus", "https://www.healthline.com/health/how-to-focus"]
+  focus: ["Healthline: How to Stay Focused", "https://www.healthline.com/health/mental-health/how-to-stay-focused"]
 };
 
 const list = document.getElementById("suggestions");
